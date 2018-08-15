@@ -1,0 +1,1027 @@
+Analysis & Synthesis report for lab7_usb
+Sun Nov 30 13:13:54 2014
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: vga_controller:vgasync_instance
+ 15. Port Connectivity Checks: "color_mapper:color_instance|rock:rock0"
+ 16. Port Connectivity Checks: "color_mapper:color_instance|rock_status:rock_stat3"
+ 17. Port Connectivity Checks: "color_mapper:color_instance|rock_status:rock_stat2"
+ 18. Port Connectivity Checks: "color_mapper:color_instance|rock_status:rock_stat1"
+ 19. Port Connectivity Checks: "color_mapper:color_instance|rock_status:rock_stat0"
+ 20. Port Connectivity Checks: "color_mapper:color_instance|ship_status:ss0"
+ 21. Port Connectivity Checks: "color_mapper:color_instance"
+ 22. Port Connectivity Checks: "keyboard:key|reg_11:reg_A"
+ 23. Port Connectivity Checks: "keyboard:key|reg_11:reg_B"
+ 24. Port Connectivity Checks: "keyboard:key|reg_11:reg_C"
+ 25. Port Connectivity Checks: "keyboard:key"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+ 29. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Nov 30 13:13:54 2014      ;
+; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name                      ; lab7_usb                                   ;
+; Top-level Entity Name              ; lab7_usb                                   ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 8,087                                      ;
+;     Total combinational functions  ; 8,064                                      ;
+;     Dedicated logic registers      ; 439                                        ;
+; Total registers                    ; 439                                        ;
+; Total pins                         ; 118                                        ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; lab7_usb           ; lab7_usb           ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Verilog Show LMF Mapping Messages                                          ; Off                ;                    ;
+; Verilog Version                                                            ; SystemVerilog_2005 ; Verilog_2001       ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                              ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                          ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------+---------+
+; rock_spawn_delay.sv              ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/rock_spawn_delay.sv ;         ;
+; shot_status.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/shot_status.sv      ;         ;
+; Random.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/Random.sv           ;         ;
+; rock.sv                          ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/rock.sv             ;         ;
+; keyboard.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/keyboard.sv         ;         ;
+; Dreg.sv                          ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/Dreg.sv             ;         ;
+; 11_reg.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/11_reg.sv           ;         ;
+; lab7_usb.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/lab7_usb.sv         ;         ;
+; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/HexDriver.sv        ;         ;
+; VGA_controller.sv                ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/VGA_controller.sv   ;         ;
+; Color_Mapper.sv                  ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/Color_Mapper.sv     ;         ;
+; ang_status.sv                    ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/ang_status.sv       ;         ;
+; ship_status.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/ship_status.sv      ;         ;
+; three_sec.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/three_sec.sv        ;         ;
+; rock_status.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/rock_status.sv      ;         ;
+; hertz_240.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/hertz_240.sv        ;         ;
+; game_control.sv                  ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/game_control.sv     ;         ;
+; hertz_480.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/hertz_480.sv        ;         ;
+; shot_trigger.sv                  ; yes             ; User SystemVerilog HDL File  ; D:/finalproject/lab7_usb/lab7_usb/shot_trigger.sv     ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                       ;
++---------------------------------------------+-------------------------------------+
+; Resource                                    ; Usage                               ;
++---------------------------------------------+-------------------------------------+
+; Estimated Total logic elements              ; 8,087                               ;
+;                                             ;                                     ;
+; Total combinational functions               ; 8064                                ;
+; Logic element usage by number of LUT inputs ;                                     ;
+;     -- 4 input functions                    ; 3093                                ;
+;     -- 3 input functions                    ; 1024                                ;
+;     -- <=2 input functions                  ; 3947                                ;
+;                                             ;                                     ;
+; Logic elements by mode                      ;                                     ;
+;     -- normal mode                          ; 4003                                ;
+;     -- arithmetic mode                      ; 4061                                ;
+;                                             ;                                     ;
+; Total registers                             ; 439                                 ;
+;     -- Dedicated logic registers            ; 439                                 ;
+;     -- I/O registers                        ; 0                                   ;
+;                                             ;                                     ;
+; I/O pins                                    ; 118                                 ;
+; Embedded Multiplier 9-bit elements          ; 0                                   ;
+; Maximum fan-out node                        ; color_mapper:color_instance|Add18~8 ;
+; Maximum fan-out                             ; 195                                 ;
+; Total fan-out                               ; 24858                               ;
+; Average fan-out                             ; 2.84                                ;
++---------------------------------------------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                          ;
++--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Library Name ;
++--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+; |lab7_usb                                        ; 8064 (4)          ; 439 (0)      ; 0           ; 0            ; 0       ; 0         ; 118  ; 0            ; |lab7_usb                                                                      ; work         ;
+;    |HexDriver:hex_inst_0|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|HexDriver:hex_inst_0                                                 ; work         ;
+;    |HexDriver:hex_inst_1|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|HexDriver:hex_inst_1                                                 ; work         ;
+;    |HexDriver:hex_inst_2|                        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|HexDriver:hex_inst_2                                                 ; work         ;
+;    |HexDriver:hex_inst_3|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|HexDriver:hex_inst_3                                                 ; work         ;
+;    |HexDriver:hex_inst_4|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|HexDriver:hex_inst_4                                                 ; work         ;
+;    |HexDriver:hex_inst_5|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|HexDriver:hex_inst_5                                                 ; work         ;
+;    |HexDriver:hex_inst_6|                        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|HexDriver:hex_inst_6                                                 ; work         ;
+;    |HexDriver:hex_inst_7|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|HexDriver:hex_inst_7                                                 ; work         ;
+;    |color_mapper:color_instance|                 ; 7926 (637)        ; 381 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance                                          ; work         ;
+;       |Random:rand0|                             ; 9 (9)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|Random:rand0                             ; work         ;
+;       |ang_status:ang0|                          ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|ang_status:ang0                          ; work         ;
+;       |game_control:gc0|                         ; 469 (456)         ; 14 (6)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|game_control:gc0                         ; work         ;
+;          |three_sec:ts0|                         ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|game_control:gc0|three_sec:ts0           ; work         ;
+;       |hertz_240:hz_0|                           ; 9 (9)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|hertz_240:hz_0                           ; work         ;
+;       |hertz_480:hz_1|                           ; 8 (8)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|hertz_480:hz_1                           ; work         ;
+;       |rock:rock0|                               ; 456 (456)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|rock:rock0                               ; work         ;
+;       |rock_spawn_delay:rsd0|                    ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|rock_spawn_delay:rsd0                    ; work         ;
+;       |rock_spawn_delay:rsd1|                    ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|rock_spawn_delay:rsd1                    ; work         ;
+;       |rock_spawn_delay:rsd2|                    ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|rock_spawn_delay:rsd2                    ; work         ;
+;       |rock_spawn_delay:rsd3|                    ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|rock_spawn_delay:rsd3                    ; work         ;
+;       |rock_spawn_delay:ship_status_reset_delay| ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|rock_spawn_delay:ship_status_reset_delay ; work         ;
+;       |rock_status:rock_stat0|                   ; 689 (689)         ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat0                   ; work         ;
+;       |rock_status:rock_stat1|                   ; 682 (682)         ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat1                   ; work         ;
+;       |rock_status:rock_stat2|                   ; 670 (670)         ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat2                   ; work         ;
+;       |rock_status:rock_stat3|                   ; 670 (670)         ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat3                   ; work         ;
+;       |ship_status:ss0|                          ; 726 (726)         ; 63 (63)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|ship_status:ss0                          ; work         ;
+;       |shot_status:shot_stat0|                   ; 700 (700)         ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat0                   ; work         ;
+;       |shot_status:shot_stat1|                   ; 698 (698)         ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat1                   ; work         ;
+;       |shot_status:shot_stat2|                   ; 701 (701)         ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat2                   ; work         ;
+;       |shot_status:shot_stat3|                   ; 698 (698)         ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat3                   ; work         ;
+;       |shot_trigger:st0|                         ; 33 (33)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|color_mapper:color_instance|shot_trigger:st0                         ; work         ;
+;    |keyboard:key|                                ; 42 (42)           ; 35 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|keyboard:key                                                         ; work         ;
+;       |reg_11:reg_B|                             ; 0 (0)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|keyboard:key|reg_11:reg_B                                            ; work         ;
+;       |reg_11:reg_C|                             ; 0 (0)             ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|keyboard:key|reg_11:reg_C                                            ; work         ;
+;    |vga_controller:vgasync_instance|             ; 44 (44)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab7_usb|vga_controller:vgasync_instance                                      ; work         ;
++--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                   ;
++-------------------------------------------------------------+----------------------------------------------------------------+------------------------+
+; Latch Name                                                  ; Latch Enable Signal                                            ; Free of Timing Hazards ;
++-------------------------------------------------------------+----------------------------------------------------------------+------------------------+
+; color_mapper:color_instance|shot_status:shot_stat3|angle[1] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[3] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat3|angle[3] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[3] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat3|angle[2] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[3] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat3|angle[0] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[3] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat3|angle[4] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[3] ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat3|angle[3] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat3|angle[2] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat3|angle[0] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat3|angle[1] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat3|angle[4] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat0|angle[1] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat0|angle[3] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat0|angle[2] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat0|angle[0] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat0|angle[4] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat1|angle[1] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat1|angle[3] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat1|angle[2] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat1|angle[0] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat1|angle[4] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat2|angle[3] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat2|angle[2] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat2|angle[0] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat2|angle[1] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|rock_status:rock_stat2|angle[4] ; color_mapper:color_instance|comb                               ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat0|angle[1] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[0] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat0|angle[3] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[0] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat0|angle[2] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[0] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat0|angle[0] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[0] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat0|angle[4] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[0] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat1|angle[1] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[1] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat1|angle[3] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[1] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat1|angle[2] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[1] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat1|angle[0] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[1] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat1|angle[4] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[1] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat2|angle[1] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[2] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat2|angle[3] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[2] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat2|angle[2] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[2] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat2|angle[0] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[2] ; yes                    ;
+; color_mapper:color_instance|shot_status:shot_stat2|angle[4] ; color_mapper:color_instance|shot_trigger:st0|withhold_shots[2] ; yes                    ;
+; Number of user-specified and inferred latches = 40          ;                                                                ;                        ;
++-------------------------------------------------------------+----------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; keyboard:key|en                        ; Stuck at VCC due to stuck port data_in ;
+; keyboard:key|Count[0,1]                ; Lost fanout                            ;
+; keyboard:key|counter[0..9]             ; Lost fanout                            ;
+; keyboard:key|enable                    ; Lost fanout                            ;
+; keyboard:key|Count[2..4]               ; Lost fanout                            ;
+; keyboard:key|Dreg:Dreg_instance2|Q     ; Lost fanout                            ;
+; keyboard:key|Dreg:Dreg_instance1|Q     ; Lost fanout                            ;
+; Total Number of Removed Registers = 19 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                     ;
++-----------------+---------------------------+-----------------------------------------------------------------------------------+
+; Register name   ; Reason for Removal        ; Registers Removed due to This Register                                            ;
++-----------------+---------------------------+-----------------------------------------------------------------------------------+
+; keyboard:key|en ; Stuck at VCC              ; keyboard:key|Count[1], keyboard:key|Count[0], keyboard:key|enable,                ;
+;                 ; due to stuck port data_in ; keyboard:key|Count[3], keyboard:key|Count[4], keyboard:key|Dreg:Dreg_instance2|Q, ;
+;                 ;                           ; keyboard:key|Dreg:Dreg_instance1|Q                                                ;
++-----------------+---------------------------+-----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 439   ;
+; Number of registers using Synchronous Clear  ; 13    ;
+; Number of registers using Synchronous Load   ; 70    ;
+; Number of registers using Asynchronous Clear ; 429   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 243   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------+
+; Inverted Register Statistics                                             ;
++----------------------------------------------------------------+---------+
+; Inverted Register                                              ; Fan out ;
++----------------------------------------------------------------+---------+
+; color_mapper:color_instance|ship_status:ss0|ship_y[4]          ; 33      ;
+; color_mapper:color_instance|ship_status:ss0|y_val[9]           ; 17      ;
+; color_mapper:color_instance|ship_status:ss0|y_val[10]          ; 17      ;
+; color_mapper:color_instance|ship_status:ss0|y_val[11]          ; 17      ;
+; color_mapper:color_instance|ship_status:ss0|ship_x[6]          ; 31      ;
+; color_mapper:color_instance|Random:rand0|rng[8]                ; 9       ;
+; color_mapper:color_instance|Random:rand0|rng[6]                ; 9       ;
+; color_mapper:color_instance|shot_trigger:st0|withhold_shots[3] ; 75      ;
+; color_mapper:color_instance|ship_status:ss0|x_val[12]          ; 21      ;
+; color_mapper:color_instance|Random:rand0|rng[5]                ; 9       ;
+; color_mapper:color_instance|Random:rand0|rng[3]                ; 9       ;
+; color_mapper:color_instance|Random:rand0|rng[1]                ; 9       ;
+; color_mapper:color_instance|game_control:gc0|withhold_rocks[0] ; 2       ;
+; color_mapper:color_instance|game_control:gc0|withhold_rocks[1] ; 2       ;
+; color_mapper:color_instance|game_control:gc0|withhold_rocks[2] ; 2       ;
+; color_mapper:color_instance|game_control:gc0|withhold_rocks[3] ; 2       ;
+; Total number of inverted registers = 16                        ;         ;
++----------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |lab7_usb|color_mapper:color_instance|ship_status:ss0|speed[0]           ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|ship_status:ss0|y_val[1]           ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|ship_status:ss0|x_val[1]           ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 72 LEs               ; 96 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|ship_status:ss0|ship_x[3]          ;
+; 32:1               ; 6 bits    ; 126 LEs       ; 54 LEs               ; 72 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|ship_status:ss0|ship_y[3]          ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat3|y_val[2]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat3|x_val[1]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat3|y_val[3]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat3|x_val[2]    ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat3|y_val[5]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat2|y_val[2]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat2|x_val[3]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat1|y_val[2]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat1|x_val[3]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat0|y_val[1]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat0|x_val[2]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat2|y_val[1]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat2|x_val[3]    ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat2|y_val[4]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat1|y_val[1]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat1|x_val[2]    ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat1|x_val[12]   ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat0|y_val[1]    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat0|x_val[3]    ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat0|x_val[8]    ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 0 LEs                ; 9 LEs                  ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_trigger:st0|withhold_shots[0] ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 18 LEs               ; 24 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|ship_status:ss0|ship_x[6]          ;
+; 32:1               ; 4 bits    ; 84 LEs        ; 36 LEs               ; 48 LEs                 ; Yes        ; |lab7_usb|color_mapper:color_instance|ship_status:ss0|y_val[11]          ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat3|x_val[13]   ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat3|y_val[5]    ;
+; 32:1               ; 9 bits    ; 189 LEs       ; 81 LEs               ; 108 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat3|x_val[9]    ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat2|x_val[8]    ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat2|y_val[5]    ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat1|x_val[11]   ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat1|y_val[13]   ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat0|x_val[12]   ;
+; 32:1               ; 10 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|shot_status:shot_stat0|y_val[4]    ;
+; 32:1               ; 9 bits    ; 189 LEs       ; 81 LEs               ; 108 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat2|x_val[5]    ;
+; 32:1               ; 9 bits    ; 189 LEs       ; 81 LEs               ; 108 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat1|y_val[7]    ;
+; 32:1               ; 9 bits    ; 189 LEs       ; 81 LEs               ; 108 LEs                ; Yes        ; |lab7_usb|color_mapper:color_instance|rock_status:rock_stat0|y_val[12]   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |lab7_usb|color_mapper:color_instance|Blue[4]                            ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |lab7_usb|color_mapper:color_instance|rock_mux_y[0]                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_controller:vgasync_instance ;
++----------------+------------+------------------------------------------------+
+; Parameter Name ; Value      ; Type                                           ;
++----------------+------------+------------------------------------------------+
+; hpixels        ; 1100011111 ; Unsigned Binary                                ;
+; vlines         ; 1000001100 ; Unsigned Binary                                ;
++----------------+------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "color_mapper:color_instance|rock:rock0"                                                                                                                                           ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; row  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; col  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "color_mapper:color_instance|rock_status:rock_stat3"                                                                                                                                      ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                             ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; in_y       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; in_y[9..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; in_x[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "color_mapper:color_instance|rock_status:rock_stat2"                                                                                                                                      ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                             ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; in_y       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; in_y[9..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; in_x[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "color_mapper:color_instance|rock_status:rock_stat1"                                                                                                                                      ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                             ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; in_x       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; in_x[9..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; in_y[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "color_mapper:color_instance|rock_status:rock_stat0"                                                                                                                                      ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                             ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; in_x       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; in_x[9..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; in_y[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "color_mapper:color_instance|ship_status:ss0"                                         ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; x_val ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; y_val ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "color_mapper:color_instance" ;
++-----------+-------+----------+--------------------------+
+; Port      ; Type  ; Severity ; Details                  ;
++-----------+-------+----------+--------------------------+
+; BallX     ; Input ; Info     ; Stuck at GND             ;
+; BallY     ; Input ; Info     ; Stuck at GND             ;
+; Ball_size ; Input ; Info     ; Stuck at GND             ;
++-----------+-------+----------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyboard:key|reg_11:reg_A"                                                                     ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Load            ; Input  ; Info     ; Stuck at GND                                                                        ;
+; D               ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Shift_Out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Data_Out[10..9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Data_Out[0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyboard:key|reg_11:reg_B"                                                                     ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Load            ; Input  ; Info     ; Stuck at GND                                                                        ;
+; D               ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Data_Out[10..9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Data_Out[0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyboard:key|reg_11:reg_C"                                                                     ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Load            ; Input  ; Info     ; Stuck at GND                                                                        ;
+; D               ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Data_Out[10..9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Data_Out[0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyboard:key"                                                                        ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; c_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; b_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; a_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 118                         ;
+; cycloneiii_ff         ; 439                         ;
+;     CLR               ; 133                         ;
+;     CLR SCLR          ; 13                          ;
+;     CLR SLD           ; 40                          ;
+;     ENA CLR           ; 213                         ;
+;     ENA CLR SLD       ; 30                          ;
+;     plain             ; 10                          ;
+; cycloneiii_lcell_comb ; 8075                        ;
+;     arith             ; 4061                        ;
+;         2 data inputs ; 3438                        ;
+;         3 data inputs ; 623                         ;
+;     normal            ; 4014                        ;
+;         0 data inputs ; 51                          ;
+;         1 data inputs ; 291                         ;
+;         2 data inputs ; 178                         ;
+;         3 data inputs ; 401                         ;
+;         4 data inputs ; 3093                        ;
+;                       ;                             ;
+; Max LUT depth         ; 21.90                       ;
+; Average LUT depth     ; 7.98                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:30     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+    Info: Processing started: Sun Nov 30 13:13:20 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab7_usb -c lab7_usb
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file rock_spawn_delay.sv
+    Info (12023): Found entity 1: rock_spawn_delay
+Info (12021): Found 1 design units, including 1 entities, in source file shot_status.sv
+    Info (12023): Found entity 1: shot_status
+Info (12021): Found 1 design units, including 1 entities, in source file random.sv
+    Info (12023): Found entity 1: Random
+Info (12021): Found 1 design units, including 1 entities, in source file rock.sv
+    Info (12023): Found entity 1: rock
+Info (12021): Found 1 design units, including 1 entities, in source file keyboard.sv
+    Info (12023): Found entity 1: keyboard
+Info (12021): Found 1 design units, including 1 entities, in source file dreg.sv
+    Info (12023): Found entity 1: Dreg
+Info (12021): Found 1 design units, including 1 entities, in source file 11_reg.sv
+    Info (12023): Found entity 1: reg_11
+Info (12021): Found 1 design units, including 1 entities, in source file testbench.sv
+    Info (12023): Found entity 1: testbench
+Info (12021): Found 1 design units, including 1 entities, in source file spaceship.sv
+    Info (12023): Found entity 1: spaceship
+Info (12021): Found 1 design units, including 1 entities, in source file lab7_usb.sv
+    Info (12023): Found entity 1: lab7_usb
+Info (12021): Found 1 design units, including 1 entities, in source file hexdriver.sv
+    Info (12023): Found entity 1: HexDriver
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller.sv
+    Info (12023): Found entity 1: vga_controller
+Info (12021): Found 1 design units, including 1 entities, in source file color_mapper.sv
+    Info (12023): Found entity 1: color_mapper
+Info (12021): Found 1 design units, including 1 entities, in source file ang_status.sv
+    Info (12023): Found entity 1: ang_status
+Info (12021): Found 1 design units, including 1 entities, in source file ship_status.sv
+    Info (12023): Found entity 1: ship_status
+Info (12021): Found 1 design units, including 1 entities, in source file three_sec.sv
+    Info (12023): Found entity 1: three_sec
+Info (12021): Found 1 design units, including 1 entities, in source file rock_status.sv
+    Info (12023): Found entity 1: rock_status
+Info (12021): Found 1 design units, including 1 entities, in source file hertz_240.sv
+    Info (12023): Found entity 1: hertz_240
+Info (12021): Found 1 design units, including 1 entities, in source file game_control.sv
+    Info (12023): Found entity 1: game_control
+Info (12021): Found 1 design units, including 1 entities, in source file hertz_480.sv
+    Info (12023): Found entity 1: hertz_480
+Info (12021): Found 1 design units, including 1 entities, in source file shot_trigger.sv
+    Info (12023): Found entity 1: shot_trigger
+Warning (10236): Verilog HDL Implicit Net warning at keyboard.sv(155): created implicit net for "press"
+Info (12127): Elaborating entity "lab7_usb" for the top level hierarchy
+Warning (10030): Net "ballxsig" at lab7_usb.sv(35) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "ballysig" at lab7_usb.sv(35) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "ballsizesig" at lab7_usb.sv(35) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "LEDG[8..5]" at lab7_usb.sv(20) has no driver
+Info (12128): Elaborating entity "keyboard" for hierarchy "keyboard:key"
+Warning (10036): Verilog HDL or VHDL warning at keyboard.sv(155): object "press" assigned a value but never read
+Warning (10858): Verilog HDL warning at keyboard.sv(15): object Press used but never assigned
+Warning (10858): Verilog HDL warning at keyboard.sv(18): object Data used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at keyboard.sv(24): object "keyCode" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at keyboard.sv(70): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "Dreg" for hierarchy "keyboard:key|Dreg:Dreg_instance1"
+Info (12128): Elaborating entity "reg_11" for hierarchy "keyboard:key|reg_11:reg_C"
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:vgasync_instance"
+Warning (10230): Verilog HDL assignment warning at VGA_controller.sv(76): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at VGA_controller.sv(79): truncated value with size 32 to match size of target (10)
+Info (12128): Elaborating entity "color_mapper" for hierarchy "color_mapper:color_instance"
+Warning (10858): Verilog HDL warning at Color_Mapper.sv(31): object ship_r used but never assigned
+Warning (10858): Verilog HDL warning at Color_Mapper.sv(31): object ship_g used but never assigned
+Warning (10858): Verilog HDL warning at Color_Mapper.sv(31): object ship_b used but never assigned
+Warning (10858): Verilog HDL warning at Color_Mapper.sv(32): object T_out used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at Color_Mapper.sv(57): object "DistX" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Color_Mapper.sv(57): object "DistY" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Color_Mapper.sv(57): object "Size" assigned a value but never read
+Warning (10030): Net "ship_r" at Color_Mapper.sv(31) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "ship_g" at Color_Mapper.sv(31) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "ship_b" at Color_Mapper.sv(31) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "T_out" at Color_Mapper.sv(32) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "ledr_17_5[7..5]" at Color_Mapper.sv(22) has no driver
+Info (12128): Elaborating entity "ang_status" for hierarchy "color_mapper:color_instance|ang_status:ang0"
+Warning (10230): Verilog HDL assignment warning at ang_status.sv(11): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at ang_status.sv(13): truncated value with size 32 to match size of target (5)
+Info (12128): Elaborating entity "rock_spawn_delay" for hierarchy "color_mapper:color_instance|rock_spawn_delay:ship_status_reset_delay"
+Warning (10230): Verilog HDL assignment warning at rock_spawn_delay.sv(12): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "ship_status" for hierarchy "color_mapper:color_instance|ship_status:ss0"
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(21): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(25): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(37): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(55): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(56): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(57): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(58): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(59): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(89): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(98): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(100): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(128): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(129): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(130): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(131): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(132): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(133): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(134): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(135): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(136): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(137): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(138): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(139): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(140): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(141): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(142): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(143): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(144): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(145): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(146): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(147): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(148): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(149): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(150): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(151): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(152): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(153): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(154): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(155): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(156): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(157): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(158): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at ship_status.sv(159): truncated value with size 32 to match size of target (14)
+Info (12128): Elaborating entity "hertz_240" for hierarchy "color_mapper:color_instance|hertz_240:hz_0"
+Warning (10230): Verilog HDL assignment warning at hertz_240.sv(8): truncated value with size 32 to match size of target (7)
+Info (12128): Elaborating entity "hertz_480" for hierarchy "color_mapper:color_instance|hertz_480:hz_1"
+Warning (10230): Verilog HDL assignment warning at hertz_480.sv(8): truncated value with size 32 to match size of target (6)
+Info (12128): Elaborating entity "Random" for hierarchy "color_mapper:color_instance|Random:rand0"
+Info (12128): Elaborating entity "game_control" for hierarchy "color_mapper:color_instance|game_control:gc0"
+Warning (10230): Verilog HDL assignment warning at game_control.sv(24): truncated value with size 32 to match size of target (2)
+Info (12128): Elaborating entity "three_sec" for hierarchy "color_mapper:color_instance|game_control:gc0|three_sec:ts0"
+Warning (10230): Verilog HDL assignment warning at three_sec.sv(12): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "rock_status" for hierarchy "color_mapper:color_instance|rock_status:rock_stat0"
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(27): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(28): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(29): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(30): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(31): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(32): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(33): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(34): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(35): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(36): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(37): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(38): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(39): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(40): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(41): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(42): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(43): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(44): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(45): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(46): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(47): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(48): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(49): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(50): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(51): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(52): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(53): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(54): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(55): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(56): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(57): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at rock_status.sv(58): truncated value with size 32 to match size of target (14)
+Warning (10240): Verilog HDL Always Construct warning at rock_status.sv(16): inferring latch(es) for variable "angle", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "angle[0]" at rock_status.sv(26)
+Info (10041): Inferred latch for "angle[1]" at rock_status.sv(26)
+Info (10041): Inferred latch for "angle[2]" at rock_status.sv(26)
+Info (10041): Inferred latch for "angle[3]" at rock_status.sv(26)
+Info (10041): Inferred latch for "angle[4]" at rock_status.sv(26)
+Info (12128): Elaborating entity "shot_status" for hierarchy "color_mapper:color_instance|shot_status:shot_stat0"
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(27): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(28): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(29): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(30): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(31): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(32): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(33): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(34): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(35): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(36): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(37): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(38): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(39): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(40): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(41): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(42): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(43): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(44): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(45): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(46): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(47): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(48): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(49): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(50): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(51): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(52): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(53): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(54): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(55): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(56): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(57): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at shot_status.sv(58): truncated value with size 32 to match size of target (14)
+Warning (10240): Verilog HDL Always Construct warning at shot_status.sv(16): inferring latch(es) for variable "angle", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "angle[0]" at shot_status.sv(26)
+Info (10041): Inferred latch for "angle[1]" at shot_status.sv(26)
+Info (10041): Inferred latch for "angle[2]" at shot_status.sv(26)
+Info (10041): Inferred latch for "angle[3]" at shot_status.sv(26)
+Info (10041): Inferred latch for "angle[4]" at shot_status.sv(26)
+Info (12128): Elaborating entity "shot_trigger" for hierarchy "color_mapper:color_instance|shot_trigger:st0"
+Warning (10230): Verilog HDL assignment warning at shot_trigger.sv(12): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at shot_trigger.sv(41): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "rock" for hierarchy "color_mapper:color_instance|rock:rock0"
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "mem" into its bus
+Info (12128): Elaborating entity "HexDriver" for hierarchy "HexDriver:hex_inst_7"
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer color_mapper:color_instance|ship_status:ss0|Mux0
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|x_val[13]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|x_val[13]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|x_val[13]~1"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|x_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|x_val[12]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|x_val[12]~5"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|x_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|x_val[11]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|x_val[11]~9"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|x_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|x_val[10]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|x_val[10]~13"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|x_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|x_val[9]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|x_val[9]~17"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat3|x_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat3|x_val[12]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat3|x_val[12]~1"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat3|x_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat3|x_val[11]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat3|x_val[11]~5"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat3|x_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat3|x_val[10]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat3|x_val[10]~9"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat3|x_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat3|x_val[9]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat3|x_val[9]~13"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|x_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|x_val[8]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|x_val[8]~21"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat3|x_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat3|x_val[8]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat3|x_val[8]~17"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|x_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|x_val[7]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|x_val[7]~25"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat3|x_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat3|x_val[7]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat3|x_val[7]~21"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|x_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|x_val[6]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|x_val[6]~29"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat3|x_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat3|x_val[6]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat3|x_val[6]~25"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|x_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|x_val[5]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|x_val[5]~33"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat3|x_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat3|x_val[5]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat3|x_val[5]~29"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|x_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|x_val[4]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|x_val[4]~37"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat3|x_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat3|x_val[4]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat3|x_val[4]~33"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|y_val[13]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|y_val[13]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|y_val[13]~1"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|y_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|y_val[12]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|y_val[12]~5"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|y_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|y_val[11]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|y_val[11]~9"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|y_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|y_val[10]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|y_val[10]~13"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|y_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|y_val[9]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|y_val[9]~17"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|y_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|y_val[8]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|y_val[8]~21"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|y_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|y_val[7]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|y_val[7]~25"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|y_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|y_val[6]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|y_val[6]~29"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|y_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|y_val[5]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|y_val[5]~33"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat3|y_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat3|y_val[4]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat3|y_val[4]~37"
+    Warning (13310): Register "color_mapper:color_instance|shot_trigger:st0|withhold_shots[0]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_trigger:st0|withhold_shots[0]~_emulated" and latch "color_mapper:color_instance|shot_trigger:st0|withhold_shots[0]~1"
+    Warning (13310): Register "color_mapper:color_instance|shot_trigger:st0|withhold_shots[1]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_trigger:st0|withhold_shots[1]~_emulated" and latch "color_mapper:color_instance|shot_trigger:st0|withhold_shots[1]~6"
+    Warning (13310): Register "color_mapper:color_instance|shot_trigger:st0|withhold_shots[2]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_trigger:st0|withhold_shots[2]~_emulated" and latch "color_mapper:color_instance|shot_trigger:st0|withhold_shots[2]~11"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat0|y_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat0|y_val[12]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat0|y_val[12]~1"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat0|y_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat0|y_val[11]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat0|y_val[11]~5"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat0|y_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat0|y_val[9]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat0|y_val[9]~9"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat0|y_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat0|y_val[10]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat0|y_val[10]~13"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat0|y_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat0|y_val[8]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat0|y_val[8]~17"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat0|y_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat0|y_val[7]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat0|y_val[7]~21"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat0|y_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat0|y_val[6]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat0|y_val[6]~25"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat0|y_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat0|y_val[5]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat0|y_val[5]~29"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat0|y_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat0|y_val[4]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat0|y_val[4]~33"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat1|y_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat1|y_val[12]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat1|y_val[12]~1"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat1|y_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat1|y_val[11]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat1|y_val[11]~5"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat1|y_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat1|y_val[9]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat1|y_val[9]~9"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat1|y_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat1|y_val[10]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat1|y_val[10]~13"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat1|y_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat1|y_val[8]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat1|y_val[8]~17"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat1|y_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat1|y_val[7]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat1|y_val[7]~21"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat1|y_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat1|y_val[6]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat1|y_val[6]~25"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat1|y_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat1|y_val[5]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat1|y_val[5]~29"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat1|y_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat1|y_val[4]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat1|y_val[4]~33"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat2|x_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat2|x_val[12]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat2|x_val[12]~1"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat2|x_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat2|x_val[11]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat2|x_val[11]~5"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat2|x_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat2|x_val[9]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat2|x_val[9]~9"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat2|x_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat2|x_val[10]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat2|x_val[10]~13"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat2|x_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat2|x_val[8]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat2|x_val[8]~17"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat2|x_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat2|x_val[7]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat2|x_val[7]~21"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat2|x_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat2|x_val[6]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat2|x_val[6]~25"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat2|x_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat2|x_val[5]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat2|x_val[5]~29"
+    Warning (13310): Register "color_mapper:color_instance|rock_status:rock_stat2|x_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|rock_status:rock_stat2|x_val[4]~_emulated" and latch "color_mapper:color_instance|rock_status:rock_stat2|x_val[4]~33"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|x_val[13]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|x_val[13]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|x_val[13]~1"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|x_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|x_val[12]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|x_val[12]~5"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|x_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|x_val[11]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|x_val[11]~9"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|x_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|x_val[10]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|x_val[10]~13"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|x_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|x_val[9]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|x_val[9]~17"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|x_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|x_val[8]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|x_val[8]~21"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|x_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|x_val[7]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|x_val[7]~25"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|x_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|x_val[5]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|x_val[5]~29"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|x_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|x_val[6]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|x_val[6]~33"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|x_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|x_val[4]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|x_val[4]~37"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|y_val[13]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|y_val[13]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|y_val[13]~1"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|y_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|y_val[12]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|y_val[12]~5"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|y_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|y_val[11]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|y_val[11]~9"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|y_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|y_val[10]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|y_val[10]~13"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|y_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|y_val[9]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|y_val[9]~17"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|y_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|y_val[8]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|y_val[8]~21"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|y_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|y_val[7]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|y_val[7]~25"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|y_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|y_val[5]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|y_val[5]~29"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|y_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|y_val[6]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|y_val[6]~33"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat0|y_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat0|y_val[4]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat0|y_val[4]~37"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|x_val[13]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|x_val[13]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|x_val[13]~1"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|x_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|x_val[12]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|x_val[12]~5"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|x_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|x_val[11]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|x_val[11]~9"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|x_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|x_val[10]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|x_val[10]~13"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|x_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|x_val[9]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|x_val[9]~17"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|x_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|x_val[8]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|x_val[8]~21"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|x_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|x_val[7]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|x_val[7]~25"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|x_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|x_val[5]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|x_val[5]~29"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|x_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|x_val[6]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|x_val[6]~33"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|x_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|x_val[4]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|x_val[4]~37"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|y_val[13]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|y_val[13]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|y_val[13]~1"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|y_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|y_val[12]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|y_val[12]~5"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|y_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|y_val[11]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|y_val[11]~9"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|y_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|y_val[10]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|y_val[10]~13"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|y_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|y_val[9]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|y_val[9]~17"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|y_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|y_val[8]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|y_val[8]~21"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|y_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|y_val[7]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|y_val[7]~25"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|y_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|y_val[5]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|y_val[5]~29"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|y_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|y_val[6]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|y_val[6]~33"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat1|y_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat1|y_val[4]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat1|y_val[4]~37"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|x_val[13]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|x_val[13]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|x_val[13]~1"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|x_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|x_val[12]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|x_val[12]~5"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|x_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|x_val[11]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|x_val[11]~9"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|x_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|x_val[10]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|x_val[10]~13"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|x_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|x_val[9]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|x_val[9]~17"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|x_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|x_val[8]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|x_val[8]~21"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|x_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|x_val[7]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|x_val[7]~25"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|x_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|x_val[5]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|x_val[5]~29"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|x_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|x_val[6]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|x_val[6]~33"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|x_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|x_val[4]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|x_val[4]~37"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|y_val[13]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|y_val[13]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|y_val[13]~1"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|y_val[12]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|y_val[12]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|y_val[12]~5"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|y_val[11]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|y_val[11]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|y_val[11]~9"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|y_val[10]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|y_val[10]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|y_val[10]~13"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|y_val[9]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|y_val[9]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|y_val[9]~17"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|y_val[8]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|y_val[8]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|y_val[8]~21"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|y_val[7]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|y_val[7]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|y_val[7]~25"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|y_val[5]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|y_val[5]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|y_val[5]~29"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|y_val[6]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|y_val[6]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|y_val[6]~33"
+    Warning (13310): Register "color_mapper:color_instance|shot_status:shot_stat2|y_val[4]" is converted into an equivalent circuit using register "color_mapper:color_instance|shot_status:shot_stat2|y_val[4]~_emulated" and latch "color_mapper:color_instance|shot_status:shot_stat2|y_val[4]~37"
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat3|x_val[9]~13" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat3|angle[3]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat3|x_val[8]~17" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat3|angle[2]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat3|x_val[6]~25" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat3|angle[0]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat3|x_val[7]~21" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat3|angle[1]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat3|x_val[10]~9" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat3|angle[4]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat0|y_val[10]~13" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat0|angle[1]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat0|y_val[12]~1" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat0|angle[3]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat0|y_val[11]~5" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat0|angle[2]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat0|y_val[9]~9" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat0|angle[0]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat1|y_val[9]~9" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat1|angle[1]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat1|y_val[11]~5" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat1|angle[3]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat1|y_val[10]~13" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat1|angle[2]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat1|y_val[8]~17" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat1|angle[0]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat1|y_val[12]~1" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat1|angle[4]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat2|x_val[10]~13" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat2|angle[3]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat2|x_val[9]~9" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat2|angle[2]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat2|x_val[7]~21" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat2|angle[0]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat2|x_val[8]~17" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat2|angle[1]"
+    Info (13026): Duplicate LATCH primitive "color_mapper:color_instance|rock_status:rock_stat2|x_val[11]~5" merged with LATCH primitive "color_mapper:color_instance|rock_status:rock_stat2|angle[4]"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX6[1]" is stuck at GND
+    Warning (13410): Pin "LEDG[5]" is stuck at GND
+    Warning (13410): Pin "LEDG[6]" is stuck at GND
+    Warning (13410): Pin "LEDG[7]" is stuck at GND
+    Warning (13410): Pin "LEDG[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "sync" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 18 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file D:/finalproject/lab7_usb/lab7_usb/output_files/lab7_usb.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 8217 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 112 output pins
+    Info (21061): Implemented 8099 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 276 warnings
+    Info: Peak virtual memory: 599 megabytes
+    Info: Processing ended: Sun Nov 30 13:13:54 2014
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:34
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/finalproject/lab7_usb/lab7_usb/output_files/lab7_usb.map.smsg.
+
+
